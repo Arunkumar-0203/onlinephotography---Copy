@@ -1,0 +1,100 @@
+{% extends 'photographer/photographer_base.html' %}
+{% load static %}
+{% block content %}
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+        <header>
+        <div class="carousel-default owl-carousel carousel-main carousel-nav-white background-dark text-center">
+          <div class="item">
+            <div class="s-12">
+              <img src="{% static 'img/portfolio/background.jpg' %}" alt="">
+              <div class="carousel-content">
+                <div class="content-center-vertical line">
+                  <div class="margin-top-bottom-80">
+                    <!-- Title -->
+
+             <div class="s-12 m-12 l-6">
+                 <h1 style="background-color: #002633;width: 700px;">MY WORKS</h1>
+
+{#                  <table class="table table-bordered table-striped table-hover" style="background-color: #002633;width: 700px;">#}
+{##}
+{#                                 <th class="success" style="color: black;">Photo Name</th>#}
+{#                                 <th class="success" style="color: black;">Details</th>#}
+{#                                 <th class="success" style="color: black;">Price</th>#}
+{#                                 <th class="success" style="color: black;">Image</th>#}
+{##}
+{##}
+{#                                 <th class="success" style="color: black;">Reject</th>#}
+{#                                 {% for pph in pho %}#}
+{##}
+{#                                <tr style="background-color: #002633;width: 700px;">#}
+{#                                    <td>{{ pph.photo_name}}</td>#}
+{#                                    <td>{{ pph.description}}</td>#}
+{#                                    <td>{{ pph.price}}</td>#}
+{#                                    <td><img style="max-width: 200px;max-height:140px;" src="{{ pph.image.url }}"></td>#}
+{##}
+{##}
+{#                                    <td><button style="background-color:lightslategray"><a href="reject?id={{ pph.id}}" class=" btn btn-danger" style="color:black">Reject</a></button></td>#}
+{##}
+{#                                </tr>#}
+{##}
+{##}
+{#                              {% endfor %}#}
+{#                            </table>#}
+              </div>
+
+                    <div class="s-12 m-10 l-8 center"><p class="text-white text-size-14 margin-bottom-40"></div>
+                    <div class="line">
+{#                      <div class="s-12 m-12 l-3 center">#}
+{#                        <a class="button button-white-stroke s-12" href="/"></a>#}
+{#                      </div>#}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Section 4 -->
+
+      <section class="section-top-padding full-width">
+
+
+{#        <div class="tabs background-primary-hightlight">#}
+{#            <div class="tab-item tab-active">#}
+
+{#              <div class="tab-content lightbox-gallery">#}
+        {% for pph in pho %}
+                <div class="s-12 m-6 l-4" style="max-width: 450px;max-height:400px;padding-left: 50px;">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="#">
+                    <div class="image-hover-overlay background-primary">
+                      <div class="image-hover-overlay-content text-center padding-2x">
+                        <h2 class="text-thin">Name:{{ pph.photo_name}}</h2>
+                        <p>Details:{{ pph.description}}</p>
+                          <p>Price:{{ pph.price}}</p>
+
+                      </div>
+                    </div>
+                    <img  style="max-width: 350px;max-height:200px;" src="{{ pph.image.url }}" alt="" title="Portfolio Image 1" />
+{#                      <button style="background-color:lightslategray"><a href="reject?id={{ pph.id}}" class=" btn btn-danger" style="color:black">Reject</a></button>#}
+{#                  </a>#}
+                </div>
+{% endfor %}
+
+{##}
+{#              </div>#}
+{#            </div>#}
+{#         </div>#}
+      </section>
+
+
+      <!-- Section 5 -->
+{#   #}
+    </main>
+
+{% endblock %}
+

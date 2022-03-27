@@ -1,0 +1,78 @@
+{% extends 'photographer/photographer_base.html' %}
+{% load static %}
+{% block content %}
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+        <header>
+        <div class="carousel-default owl-carousel carousel-main carousel-nav-white background-dark text-center">
+          <div class="item">
+            <div class="s-12">
+              <img src="{% static 'img/portfolio/background.jpg' %}" alt="">
+              <div class="carousel-content">
+                <div class="content-center-vertical line">
+                  <div class="margin-top-bottom-80">
+                    <!-- Title -->
+
+             <div class="s-12 m-12 l-6">
+                 <h1 style="background-color: #002633;width: 700px;">EXHIBITIONS</h1>
+
+                  <table class="table table-bordered table-striped table-hover" style="background-color: #002633;width: 700px;">
+
+                                 <th class="success" style="color: black;">Exhibition Name</th>
+                                 <th class="success" style="color: black;">Venue</th>
+                                 <th class="success" style="color: black;">Date</th>
+                                 <th class="success" style="color: black;">Time</th>
+                                 <th class="success" style="color: black;">Location</th>
+
+
+{#                                 <th class="success" style="color: black;">Reject</th>#}
+                                 {% for exhi in exh %}
+
+                                <tr style="background-color: #002633;width: 700px;">
+                                    <td>{{ exhi.exhi_name }}</td>
+                                    <td>{{ exhi.venue }}</td>
+                                    <td>{{ exhi.date }}</td>
+                                    <td>{{ exhi.time }}</td>
+                                    <td>{{ exhi.location }}</td>
+{#                                    <td><img style="max-width: 200px;max-height:140px;" src="{{ exhi.image.url }}"></td>#}
+
+
+{#                                    <td><button style="background-color:lightslategray"><a href="reject?id={{ pph.id}}" class=" btn btn-danger" style="color:black">Reject</a></button></td>#}
+
+                                </tr>
+
+
+                              {% endfor %}
+                            </table>
+              </div>
+
+                    <div class="s-12 m-10 l-8 center"><p class="text-white text-size-14 margin-bottom-40"></div>
+                    <div class="line">
+{#                      <div class="s-12 m-12 l-3 center">#}
+{#                        <a class="button button-white-stroke s-12" href="/"></a>#}
+{#                      </div>#}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Section 4 -->
+
+      <section class="section-top-padding full-width">
+
+
+      </section>
+
+
+      <!-- Section 5 -->
+{#   #}
+    </main>
+
+{% endblock %}
+

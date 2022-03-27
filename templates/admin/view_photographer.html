@@ -1,0 +1,69 @@
+{% extends 'admin/admin_base.html' %}
+{% load static %}
+{% block content %}
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+        <header>
+        <div class="carousel-default owl-carousel carousel-main carousel-nav-white background-dark text-center">
+          <div class="item">
+            <div class="s-12">
+              <img src="{% static 'img/portfolio/background.jpg' %}" alt="">
+              <div class="carousel-content">
+                <div class="content-center-vertical line">
+                  <div class="margin-top-bottom-80">
+                    <!-- Title -->
+
+             <div class="s-12 m-12 l-6">
+                 <h2 style="background-color: #002633;width: 700px;">User verification</h2>
+
+                  <table class="table table-bordered table-striped table-hover" style="background-color: #002633;width: 700px;">
+
+                                 <th class="success" style="color: black;">User Name</th>
+                                 <th class="success" style="color: black;">Email</th>
+                                 <th class="success" style="color: black;">Contact Number</th>
+                                 <th class="success" style="color: black;">Address</th>
+
+                                 <th class="success" style="color: black;">Approve</th>
+                                 <th class="success" style="color: black;">Reject</th>
+                                 {% for pr in phr %}
+
+                                <tr style="background-color: #002633;width: 700px;">
+                                    <td>{{ pr.user.first_name}}</td>
+                                    <td>{{ pr.user.email}}</td>
+                                    <td>{{ pr.contact}}</td>
+                                    <td>{{ pr.address}}</td>
+
+                                    <td><button style="background-color:lightslategray"><a href="approve?id={{ pr.user_id}}" class=" btn btn-success" style="color:black">Approve</a></button></td>
+                                    <td><button style="background-color:lightslategray"><a href="reject?id={{ pr.user_id}}" class=" btn btn-danger" style="color:black">Reject</a></button></td>
+
+                                </tr>
+
+
+                              {% endfor %}
+                            </table>
+              </div>
+
+                    <div class="s-12 m-10 l-8 center"><p class="text-white text-size-14 margin-bottom-40"></div>
+                    <div class="line">
+                      <div class="s-12 m-12 l-3 center">
+                        <a class="button button-white-stroke s-12" href="/"></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Section 4 -->
+
+      <!-- Section 5 -->
+{#   #}
+    </main>
+
+{% endblock %}
+

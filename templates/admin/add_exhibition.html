@@ -1,0 +1,93 @@
+{% extends 'admin/admin_base.html' %}
+{% load static %}
+{% block content %}
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+        <header>
+        <div class="carousel-default owl-carousel carousel-main carousel-nav-white background-dark text-center">
+          <div class="item">
+            <div class="s-12">
+              <img src="{% static 'img/portfolio/background.jpg' %}" alt="">
+              <div class="carousel-content">
+                <div class="content-center-vertical line">
+                  <div class="margin-top-bottom-80">
+                    <!-- Title -->
+
+             <div class="s-12 m-12 l-6">
+
+                <h2 class="margin-bottom-10" style="background-color: #002633">ADD EXHIBITION</h2>
+                <form action="" class="customform" method="post">
+                    {% csrf_token %}
+                  <div class="line">
+                    <div class="margin">
+
+                         <div class="s-12 m-12 l-6">
+                        <input style="background-color: #1c3849" name="Exhibition" class="name" placeholder="Enter Exhibition name" title="Exhibition" type="text" />
+
+                      </div>
+                      <div class="s-12 m-12 l-6">
+                        <input style="background-color: #1c3849" name="venue" class="required venue" placeholder="Enter venue" title="Your venue" type="text" />
+
+                      </div>
+
+                    </div>
+                  </div>
+                     <div class="line">
+                    <div class="margin">
+                      <div class="s-12 m-12 l-6">
+                        <input style="background-color: #1c3849" name="location" class="required location" placeholder="Enter Location" title="location" type="text" />
+
+                      </div>
+                    <div class="s-12 m-12 l-6">
+                        <input style="background-color: #1c3849" name="time" class="required time" placeholder="Enter Time" title="time" type="time" />
+
+                      </div>
+
+{#                    </div>#}
+                  </div>
+                       <div class="line">
+                    <div class="margin">
+
+                         <div class="s-12 m-12 l-6">
+                        <input style="background-color: #1c3849" name="date" class="name" placeholder="Enter date" title="date" type="date" />
+
+                      </div>
+
+                    </div>
+                  </div>
+{#                  <div class="s-12">#}
+{#                    <input name="subject" class="subject" placeholder="Subject" title="Subject" type="text" />#}
+{#                    <p class="subject-error form-error">Please enter the subject.</p>#}
+{#                  </div>#}
+{#                  <div class="s-12">#}
+{#                    <textarea name="message" class="required message" placeholder="Your message" rows="3"></textarea>#}
+{#                    <p class="message-error form-error">Please enter your message.</p>#}
+{#                  </div>#}
+                  <div  class="s-12"><button class="submit-form button background-primary text-white" type="submit">Submit Button</button></div>
+                </form>
+              </div>
+
+                    <div class="s-12 m-10 l-8 center"><p class="text-white text-size-14 margin-bottom-40"></div>
+                    <div class="line">
+{#                      <div class="s-12 m-12 l-3 center">#}
+{#                        <a class="button button-white-stroke s-12" href="/"></a>#}
+{#                      </div>#}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Section 4 -->
+
+      <!-- Section 5 -->
+{#   #}
+    </main>
+
+{% endblock %}
+

@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+        <header>
+        <div class="carousel-default owl-carousel carousel-main carousel-nav-white background-dark text-center">
+          <div class="item">
+            <div class="s-12">
+              <img src="{% static 'img/portfolio/background.jpg' %}" alt="">
+              <div class="carousel-content">
+                <div class="content-center-vertical line">
+                  <div class="margin-top-bottom-80">
+                    <!-- Title -->
+
+             <div class="s-12 m-12 l-6">
+                 <h2 style="background-color: #002633">User</h2>
+                <h2 class="margin-bottom-10" style="background-color: #002633">Register Here</h2>
+                <form name="contactForm" action="" class="customform" method="post">
+                    {% csrf_token %}
+                  <div class="line">
+                    <div class="margin">
+
+                         <div class="s-12 m-12 l-6">
+                        <input style="background-color: #1c3849" name="name" class="name" placeholder="Enter Your name" title="Your name" type="text" />
+
+                      </div>
+                      <div class="s-12 m-12 l-6">
+                        <input style="background-color: #1c3849" name="email" class="required email" placeholder="Your e-mail" title="Your e-mail" type="text" />
+
+                      </div>
+
+                    </div>
+                  </div>
+                     <div class="line">
+                    <div class="margin">
+                      <div class="s-12 m-12 l-6">
+                        <input style="background-color: #1c3849" name="address" class="required address" placeholder="Enter Your address" title="address" type="text" />
+
+                      </div>
+                      <div class="s-12 m-12 l-6">
+                        <input style="background-color: #1c3849" name="contact" class="name" placeholder="Enter Your Cotact" title="Your name" type="number" />
+
+                      </div>
+                    </div>
+                  </div>
+                       <div class="line">
+                    <div class="margin">
+
+                         <div class="s-12 m-12 l-6">
+                        <input style="background-color: #1c3849" name="username" class="name" placeholder="Enter Your Username" title="username" type="text" />
+
+                      </div>
+                      <div class="s-12 m-12 l-6">
+                        <input style="background-color: #1c3849" name="password" class="required password" placeholder="Enter Your Password" title="Your password" type="password" />
+
+                      </div>
+
+                    </div>
+                  </div>
+{#                  <div class="s-12">#}
+{#                    <input name="subject" class="subject" placeholder="Subject" title="Subject" type="text" />#}
+{#                    <p class="subject-error form-error">Please enter the subject.</p>#}
+{#                  </div>#}
+{#                  <div class="s-12">#}
+{#                    <textarea name="message" class="required message" placeholder="Your message" rows="3"></textarea>#}
+{#                    <p class="message-error form-error">Please enter your message.</p>#}
+{#                  </div>#}
+                  <div  class="s-12"><button class="submit-form button background-primary text-white" type="submit">Submit Button</button></div>
+                </form>
+              </div>
+
+                    <div class="s-12 m-10 l-8 center"><p class="text-white text-size-14 margin-bottom-40"></div>
+                    <div class="line">
+{#                      <div class="s-12 m-12 l-3 center">#}
+{#                        <a class="button button-white-stroke s-12" href="/"></a>#}
+{#                      </div>#}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Section 4 -->
+
+      <!-- Section 5 -->
+{#   #}
+    </main>
+
+{% endblock %}
+

@@ -1,0 +1,66 @@
+{% extends 'user/user_base.html' %}
+{% load static %}
+{% block content %}
+
+     <header>
+        <div class="carousel-default owl-carousel carousel-main carousel-nav-white background-dark text-center">
+          <div class="item">
+            <div class="s-12">
+              <img src="{% static 'img/portfolio/background.jpg' %}" alt="">
+              <div class="carousel-content">
+                <div class="content-center-vertical line">
+                  <div class="margin-top-bottom-80">
+                    <!-- Title -->
+                    <h1 class="text-white margin-bottom-30 text-size-60 text-m-size-30 text-line-height-1"><br>
+
+
+                    </h1>
+                    <div class="s-12 m-10 l-8 center"><p class="text-white text-size-14 margin-bottom-40"></div>
+                    <div class="line">
+{#                      <div class="s-12 m-12 l-3 center">#}
+{#                        <a class="button button-white-stroke s-12" href="/"></a>#}
+{#                      </div>#}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+
+
+      <!-- Section 4 -->
+{#      <section class="section-top-padding full-width">#}
+
+
+{#        <div class="tabs background-primary-hightlight">#}
+{#            <div class="tab-item tab-active">#}
+
+{#              <div class="tab-content lightbox-gallery">#}
+                {% for g in gall %}
+                <div class="s-12 m-6 l-4" style="max-width: 450px;max-height:400px;padding-left: 50px;">
+                  <a class="image-with-hover-overlay image-hover-zoom" href="#">
+                    <div class="image-hover-overlay background-primary"> 
+                      <div class="image-hover-overlay-content text-center padding-2x">
+                        <h2 class="text-thin">Name:{{ g.photo_name}}</h2>
+                          <p>Photogarpher Name:{{ g.user.first_name}}</p>
+                        <p>Details:{{ g.description}}</p>
+                          <p>Price:{{ g.price}}</p>
+{#                          <p>Details:{{ pph.description}}</p>#}
+                      </div> 
+                    </div> 
+                    <img  style="max-width: 350px;max-height:200px;" src="{{ g.image.url }}" alt="" title="Portfolio Image 1" />
+                  </a>	
+                </div>
+               {% endfor %}
+
+      </section>
+      
+      <!-- Section 5 -->    
+{#   #}
+    </main>
+
+{% endblock %}
+    
